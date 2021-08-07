@@ -28,18 +28,33 @@
     <None Remove="Views\Weather\" />
     <None Remove="ViewModels\Common\" />
     <None Remove="ViewModels\Weather\" />
+    <None Remove="Resources\" />
+    <None Remove="Resources\Languages\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ViewModels\" />
-    <Folder Include="Views\" />
+    <Folder Include="ViewModel\" />
+    <Folder Include="View\" />
     <Folder Include="Models\" />
     <Folder Include="Models\DTOs\" />
     <Folder Include="Models\UIs\" />
     <Folder Include="Helpers\" />
     <Folder Include="Converters\" />
-    <Folder Include="Views\Common\" />
-    <Folder Include="Views\Weather\" />
-    <Folder Include="ViewModels\Common\" />
-    <Folder Include="ViewModels\Weather\" />
+    <Folder Include="View\Common\" />
+    <Folder Include="View\Weather\" />
+    <Folder Include="ViewModel\Common\" />
+    <Folder Include="ViewModel\Weather\" />
+    <Folder Include="Resources\" />
+    <Folder Include="Resources\Languages\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\Languages\ApplicationResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ApplicationResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Resources\Languages\ApplicationResource.Designer.cs">
+      <DependentUpon>ApplicationResource.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>

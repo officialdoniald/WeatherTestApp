@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<TabbedPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="WeatherTestApp.View.Common.MenuPage"
+    xmlns:Resource="clr-namespace:WeatherTestApp.Resources.Languages" 
+    xmlns:viewModelBase="clr-namespace:Xamarin.Forms.MVVM.ViewModel.Base;assembly=Xamarin.Forms.MVVM"
+    viewModelBase:ViewModelLocator.AutoWireViewModel="true"
+    xmlns:iOS="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:weather="clr-namespace:WeatherTestApp.View.Weather"
+    iOS:Page.UseSafeArea="true"
+    Title="{x:Static Resource:ApplicationResource.Common_Menu}">
+    <NavigationPage IconImageSource="menusearch.png" Title="{x:Static Resource:ApplicationResource.Menu_Search}">
+        <x:Arguments>
+            <weather:WeatherByTownPage/>
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage IconImageSource="menufavourite.png" Title="{x:Static Resource:ApplicationResource.Menu_Favourite}">
+        <x:Arguments>
+            <weather:FavouriteTownsPage/>
+        </x:Arguments>
+    </NavigationPage>
+</TabbedPage>

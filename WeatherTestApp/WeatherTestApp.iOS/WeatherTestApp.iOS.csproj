@@ -133,4 +133,10 @@
       <Name>WeatherTestApp</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\menufavourite.png" />
+    <BundleResource Include="Resources\menusearch.png" />
+    <BundleResource Include="Resources\unfavourite.png" />
+    <BundleResource Include="Resources\favourite.png" />
+  </ItemGroup>
 </Project>

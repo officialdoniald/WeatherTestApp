@@ -1,6 +1,5 @@
-﻿using System;
+﻿using WeatherTestApp.View.Common;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace WeatherTestApp
 {
@@ -10,7 +9,7 @@ namespace WeatherTestApp
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new MenuPage();
         }
 
         protected override void OnStart()
