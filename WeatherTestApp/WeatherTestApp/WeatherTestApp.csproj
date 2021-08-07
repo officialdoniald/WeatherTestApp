@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+    <PackageReference Include="Xamarin.Forms.MVVM_officialdoniald" Version="1.0.0.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Xamarin.Forms.MVVM_officialdoniald" />
+    <None Remove="ViewModel\" />
+    <None Remove="Views\" />
+    <None Remove="Models\" />
+    <None Remove="Models\DTOs\" />
+    <None Remove="Models\UIs\" />
+    <None Remove="Helpers\" />
+    <None Remove="Converters\" />
+    <None Remove="Views\Common\" />
+    <None Remove="Views\Weather\" />
+    <None Remove="ViewModels\Common\" />
+    <None Remove="ViewModels\Weather\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
+    <Folder Include="Views\" />
+    <Folder Include="Models\" />
+    <Folder Include="Models\DTOs\" />
+    <Folder Include="Models\UIs\" />
+    <Folder Include="Helpers\" />
+    <Folder Include="Converters\" />
+    <Folder Include="Views\Common\" />
+    <Folder Include="Views\Weather\" />
+    <Folder Include="ViewModels\Common\" />
+    <Folder Include="ViewModels\Weather\" />
+  </ItemGroup>
+</Project>
