@@ -141,5 +141,7 @@
     <BundleResource Include="Resources\menusearch.png" />
     <BundleResource Include="Resources\unfavourite.png" />
     <BundleResource Include="Resources\favourite.png" />
+    <BundleResource Include="Resources\cloud.png" />
+    <BundleResource Include="Resources\temp.png" />
   </ItemGroup>
 </Project>

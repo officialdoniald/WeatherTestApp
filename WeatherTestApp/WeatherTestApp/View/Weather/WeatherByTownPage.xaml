@@ -11,10 +11,24 @@
     Title="{x:Static Resource:ApplicationResource.WeatherByTownPage_Title}">
     <ContentPage.Content>
         <StackLayout>
-            <Entry Text="{Binding Town}" Placeholder="{x:Static Resource:ApplicationResource.FavouriteTownsPage_TownEntryPlaceholder}"/>
-            <Button Command="{Binding SearchCommand}" Text="{x:Static Resource:ApplicationResource.FavouriteTownsPage_Search}"/>
+            <Entry Text="{Binding Town}" Placeholder="{x:Static Resource:ApplicationResource.WeatherByTownPage_TownEntryPlaceholder}"/>
+            <Button Command="{Binding SearchCommand}" Text="{x:Static Resource:ApplicationResource.WeatherByTownPage_Search}"/>
             <ActivityIndicator/>
-            <Label TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Text="{x:Static Resource:ApplicationResource.FavouriteTownsPage_NoTownDataFound}" IsVisible="{Binding IsNoTownDataFound}"/>
+            <Grid VerticalOptions="CenterAndExpand" IsVisible="{Binding IsNoTownDataFound, Converter={StaticResource InverseBoolConverter}}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Image Source="cloud.png" Grid.Column="0" Grid.Row="0"/>
+                <Image Source="temp.png" Grid.Column="1" Grid.Row="0"/>
+                <Label Grid.Column="0" Grid.Row="1" FontSize="40" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Text="{Binding SkyInfo}"/>
+                <Label Grid.Column="1" Grid.Row="1" FontSize="40" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Text="{Binding Temperature}"/>
+            </Grid>
+            <Label HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Text="{x:Static Resource:ApplicationResource.WeatherByTownPage_NoTownDataFound}" IsVisible="{Binding IsNoTownDataFound}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

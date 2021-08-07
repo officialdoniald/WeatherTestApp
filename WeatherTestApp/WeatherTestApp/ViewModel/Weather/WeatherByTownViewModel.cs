@@ -8,6 +8,8 @@ using System.Linq;
 using WeatherTestApp.Resources.Languages;
 using WeatherTestApp.Helpers;
 using System;
+using Newtonsoft.Json;
+using WeatherTestApp.Models.DTOs;
 
 namespace WeatherTestApp.ViewModel.Weather
 {
@@ -37,6 +39,32 @@ namespace WeatherTestApp.ViewModel.Weather
             {
                 _town = value;
                 RaisePropertyChanged(() => Town);
+            }
+        }
+
+
+        private string _skyInfo = ApplicationResource.Common_Empty;
+
+        public string SkyInfo
+        {
+            get { return _skyInfo; }
+            set
+            {
+                _skyInfo = value;
+                RaisePropertyChanged(() => SkyInfo);
+            }
+        }
+
+
+        private string _temperature = ApplicationResource.Common_Empty;
+
+        public string Temperature
+        {
+            get { return _temperature; }
+            set
+            {
+                _temperature = value;
+                RaisePropertyChanged(() => Temperature);
             }
         }
 
@@ -70,16 +98,25 @@ namespace WeatherTestApp.ViewModel.Weather
 
             try
             {
-                var townSearchUrl = string.Format(
-                    ApplicationResource.Common_WeatherApiTownSearchRequest,
-                    Town);
+                var townSearchUrl = string.Format(ApplicationResource.Common_WeatherApiTownSearchRequest, Town);
 
-                var townWeatherResponse = await Util.Instance.CRUD(townSearchUrl, null, HttpMethod.Get);
+                var townWeatherResponse = JsonConvert.DeserializeObject<WeatherResponse>(await Util.Instance.CRUD(townSearchUrl, null, HttpMethod.Get)).Data.FirstOrDefault();
+
+                Device.BeginInvokeOnMainThread(() =>
+                {
+                    SkyInfo = townWeatherResponse.Weather.Description;
+
+                    Temperature = string.Format(ApplicationResource.Common_Celsius, Math.Round(townWeatherResponse.Temp, 0));
+                });
             }
             catch (Exception)
             {
                 Device.BeginInvokeOnMainThread(() =>
                 {
+                    SkyInfo = ApplicationResource.Common_Empty;
+
+                    Temperature = ApplicationResource.Common_Empty;
+
                     IsNoTownDataFound = true;
 
                     IsLoading = false;

@@ -95,27 +95,39 @@ namespace WeatherTestApp.Resources.Languages {
             }
         }
         
-        internal static string FavouriteTownsPage_NoTownDataFound {
+        internal static string WeatherByTownPage_NoTownDataFound {
             get {
-                return ResourceManager.GetString("FavouriteTownsPage_NoTownDataFound", resourceCulture);
+                return ResourceManager.GetString("WeatherByTownPage_NoTownDataFound", resourceCulture);
             }
         }
         
-        internal static string FavouriteTownsPage_TownEntryPlaceholder {
+        internal static string WeatherByTownPage_TownEntryPlaceholder {
             get {
-                return ResourceManager.GetString("FavouriteTownsPage_TownEntryPlaceholder", resourceCulture);
+                return ResourceManager.GetString("WeatherByTownPage_TownEntryPlaceholder", resourceCulture);
             }
         }
         
-        internal static string FavouriteTownsPage_Search {
+        internal static string WeatherByTownPage_Search {
             get {
-                return ResourceManager.GetString("FavouriteTownsPage_Search", resourceCulture);
+                return ResourceManager.GetString("WeatherByTownPage_Search", resourceCulture);
             }
         }
         
         internal static string Common_FillAllEntries {
             get {
                 return ResourceManager.GetString("Common_FillAllEntries", resourceCulture);
+            }
+        }
+        
+        internal static string Common_Celsius {
+            get {
+                return ResourceManager.GetString("Common_Celsius", resourceCulture);
+            }
+        }
+        
+        internal static string Common_Empty {
+            get {
+                return ResourceManager.GetString("Common_Empty", resourceCulture);
             }
         }
     }

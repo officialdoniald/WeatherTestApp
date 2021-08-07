@@ -42,7 +42,7 @@
 
             <Style ApplyToDerivedTypes="True" TargetType="Entry">
                 <Setter Property="IsEnabled" Value="{Binding IsLoading, Converter={StaticResource InverseBoolConverter}}"/>
-                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="TextColor" Value="{StaticResource AppColor}"/>
                 <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
                 <Setter Property="VerticalOptions" Value="Center"/>
                 <Setter Property="Margin" Value="{StaticResource CommonEntryThickness}"/>
@@ -51,10 +51,17 @@
 
             <Style ApplyToDerivedTypes="True" TargetType="Label">
                 <Setter Property="IsEnabled" Value="{Binding IsLoading, Converter={StaticResource InverseBoolConverter}}"/>
-                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="TextColor" Value="{StaticResource AppColor}"/>
                 <Setter Property="HorizontalOptions" Value="Start"/>
                 <Setter Property="VerticalOptions" Value="Start"/>
                 <Setter Property="FontSize" Value="17"/>
+            </Style>
+
+            <Style ApplyToDerivedTypes="True" TargetType="Image">
+                <Setter Property="IsEnabled" Value="{Binding IsLoading, Converter={StaticResource InverseBoolConverter}}"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="HeightRequest" Value="35"/>
             </Style>
         </ResourceDictionary>
     </Application.Resources>
