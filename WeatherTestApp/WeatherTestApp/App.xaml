@@ -5,8 +5,57 @@
              xmlns:converters="clr-namespace:WeatherTestApp.Converters">
     <Application.Resources>
         <ResourceDictionary>
+            <Color x:Key="AppColor">#89CFF0</Color>
+
+            <x:Double x:Key="ActivityIndicatorHeigh">50</x:Double>
+            <x:Double x:Key="CommonButtonHeigh">50</x:Double>
+            <x:Double x:Key="CommonEntryHeigh">50</x:Double>
+
+            <Thickness x:Key="CommonButtonThickness">25</Thickness>
+            <Thickness x:Key="CommonEntryThickness">25</Thickness>
+            <Thickness x:Key="CommonStackLayoutThickness">10</Thickness>
+
             <converters:InverseBoolConverter x:Key="InverseBoolConverter"/>
 
+            <Style ApplyToDerivedTypes="True" TargetType="StackLayout">
+                <Setter Property="Margin" Value="{StaticResource CommonStackLayoutThickness}"/>
+            </Style>
+
+            <Style ApplyToDerivedTypes="True" TargetType="ActivityIndicator">
+                <Setter Property="IsVisible" Value="{Binding IsLoading}"/>
+                <Setter Property="IsRunning" Value="True"/>
+                <Setter Property="Color" Value="{StaticResource AppColor}"/>
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="HeightRequest" Value="{StaticResource ActivityIndicatorHeigh}"/>
+            </Style>
+
+            <Style ApplyToDerivedTypes="True" TargetType="Button">
+                <Setter Property="IsEnabled" Value="{Binding IsLoading, Converter={StaticResource InverseBoolConverter}}"/>
+                <Setter Property="BackgroundColor" Value="{StaticResource AppColor}"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="Margin" Value="{StaticResource CommonButtonThickness}"/>
+                <Setter Property="HeightRequest" Value="{StaticResource CommonButtonHeigh}"/>
+            </Style>
+
+            <Style ApplyToDerivedTypes="True" TargetType="Entry">
+                <Setter Property="IsEnabled" Value="{Binding IsLoading, Converter={StaticResource InverseBoolConverter}}"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="Margin" Value="{StaticResource CommonEntryThickness}"/>
+                <Setter Property="HeightRequest" Value="{StaticResource CommonEntryHeigh}"/>
+            </Style>
+
+            <Style ApplyToDerivedTypes="True" TargetType="Label">
+                <Setter Property="IsEnabled" Value="{Binding IsLoading, Converter={StaticResource InverseBoolConverter}}"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="HorizontalOptions" Value="Start"/>
+                <Setter Property="VerticalOptions" Value="Start"/>
+                <Setter Property="FontSize" Value="17"/>
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

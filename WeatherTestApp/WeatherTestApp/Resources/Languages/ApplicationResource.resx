@@ -15,6 +15,9 @@
 	<data name="Common_OK" xml:space="preserve">
 		<value>OK</value>
 	</data>
+	<data name="Common_Warning" xml:space="preserve">
+		<value>Warning</value>
+	</data>
 	<data name="Menu_Search" xml:space="preserve">
 		<value>Search</value>
 	</data>
@@ -29,5 +32,20 @@
 	</data>
 	<data name="Common_Menu" xml:space="preserve">
 		<value>Menu</value>
+	</data>
+	<data name="Common_WeatherApiTownSearchRequest" xml:space="preserve">
+		<value>https://api.weatherbit.io/v2.0/current?city={0}&amp;key=cc09081adbba49ef823c578d82aa53b8</value>
+	</data>
+	<data name="FavouriteTownsPage_NoTownDataFound" xml:space="preserve">
+		<value>No data found, please try again with another town!</value>
+	</data>
+	<data name="FavouriteTownsPage_TownEntryPlaceholder" xml:space="preserve">
+		<value>Give me a valid town</value>
+	</data>
+	<data name="FavouriteTownsPage_Search" xml:space="preserve">
+		<value>Search</value>
+	</data>
+	<data name="Common_FillAllEntries" xml:space="preserve">
+		<value>Fill all entries!</value>
 	</data>
 </root>

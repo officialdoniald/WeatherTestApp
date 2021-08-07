@@ -14,6 +14,7 @@
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
     <PackageReference Include="Xamarin.Forms.MVVM_officialdoniald" Version="1.0.0.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Xamarin.Forms.MVVM_officialdoniald" />
@@ -30,6 +31,8 @@
     <None Remove="ViewModels\Weather\" />
     <None Remove="Resources\" />
     <None Remove="Resources\Languages\" />
+    <None Remove="Newtonsoft.Json" />
+    <None Remove="Configurations\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModel\" />
@@ -45,6 +48,7 @@
     <Folder Include="ViewModel\Weather\" />
     <Folder Include="Resources\" />
     <Folder Include="Resources\Languages\" />
+    <Folder Include="Configurations\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="Resources\Languages\ApplicationResource.resx">

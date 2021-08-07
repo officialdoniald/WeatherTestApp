@@ -53,6 +53,12 @@ namespace WeatherTestApp.Resources.Languages {
             }
         }
         
+        internal static string Common_Warning {
+            get {
+                return ResourceManager.GetString("Common_Warning", resourceCulture);
+            }
+        }
+        
         internal static string Menu_Search {
             get {
                 return ResourceManager.GetString("Menu_Search", resourceCulture);
@@ -80,6 +86,36 @@ namespace WeatherTestApp.Resources.Languages {
         internal static string Common_Menu {
             get {
                 return ResourceManager.GetString("Common_Menu", resourceCulture);
+            }
+        }
+        
+        internal static string Common_WeatherApiTownSearchRequest {
+            get {
+                return ResourceManager.GetString("Common_WeatherApiTownSearchRequest", resourceCulture);
+            }
+        }
+        
+        internal static string FavouriteTownsPage_NoTownDataFound {
+            get {
+                return ResourceManager.GetString("FavouriteTownsPage_NoTownDataFound", resourceCulture);
+            }
+        }
+        
+        internal static string FavouriteTownsPage_TownEntryPlaceholder {
+            get {
+                return ResourceManager.GetString("FavouriteTownsPage_TownEntryPlaceholder", resourceCulture);
+            }
+        }
+        
+        internal static string FavouriteTownsPage_Search {
+            get {
+                return ResourceManager.GetString("FavouriteTownsPage_Search", resourceCulture);
+            }
+        }
+        
+        internal static string Common_FillAllEntries {
+            get {
+                return ResourceManager.GetString("Common_FillAllEntries", resourceCulture);
             }
         }
     }

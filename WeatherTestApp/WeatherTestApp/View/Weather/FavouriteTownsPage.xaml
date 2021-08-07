@@ -10,6 +10,8 @@
     iOS:Page.UseSafeArea="true"
     Title="{x:Static Resource:ApplicationResource.FavouriteTownsPage_Title}">
     <ContentPage.Content>
+        <StackLayout>
 
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
