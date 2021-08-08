@@ -130,5 +130,23 @@ namespace WeatherTestApp.Resources.Languages {
                 return ResourceManager.GetString("Common_Empty", resourceCulture);
             }
         }
+        
+        internal static string TownDescriptionPage_NoFavourites {
+            get {
+                return ResourceManager.GetString("TownDescriptionPage_NoFavourites", resourceCulture);
+            }
+        }
+        
+        internal static string WeatherByTownPage_AddFavorite {
+            get {
+                return ResourceManager.GetString("WeatherByTownPage_AddFavorite", resourceCulture);
+            }
+        }
+        
+        internal static string WeatherByTownPage_TownAlreadyAdded {
+            get {
+                return ResourceManager.GetString("WeatherByTownPage_TownAlreadyAdded", resourceCulture);
+            }
+        }
     }
 }

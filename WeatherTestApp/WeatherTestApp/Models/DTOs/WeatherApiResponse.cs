@@ -40,13 +40,13 @@ namespace WeatherTestApp.Models.DTOs
         public string CountryCode { get; set; }
 
         [JsonProperty("clouds")]
-        public int Clouds { get; set; }
+        public double Clouds { get; set; }
 
         [JsonProperty("ts")]
-        public int Ts { get; set; }
+        public double Ts { get; set; }
 
         [JsonProperty("solar_rad")]
-        public int SolarRad { get; set; }
+        public double SolarRad { get; set; }
 
         [JsonProperty("state_code")]
         public string StateCode { get; set; }
@@ -67,43 +67,43 @@ namespace WeatherTestApp.Models.DTOs
         public double Slp { get; set; }
 
         [JsonProperty("vis")]
-        public int Vis { get; set; }
+        public double Vis { get; set; }
 
         [JsonProperty("h_angle")]
-        public int HAngle { get; set; }
+        public double HAngle { get; set; }
 
         [JsonProperty("sunset")]
         public string Sunset { get; set; }
 
         [JsonProperty("dni")]
-        public int Dni { get; set; }
+        public double Dni { get; set; }
 
         [JsonProperty("dewpt")]
         public double Dewpt { get; set; }
 
         [JsonProperty("snow")]
-        public int Snow { get; set; }
+        public double Snow { get; set; }
 
         [JsonProperty("uv")]
-        public int Uv { get; set; }
+        public double Uv { get; set; }
 
         [JsonProperty("precip")]
-        public int Precip { get; set; }
+        public double Precip { get; set; }
 
         [JsonProperty("wind_dir")]
-        public int WindDir { get; set; }
+        public double WindDir { get; set; }
 
         [JsonProperty("sunrise")]
         public string Sunrise { get; set; }
 
         [JsonProperty("ghi")]
-        public int Ghi { get; set; }
+        public double Ghi { get; set; }
 
         [JsonProperty("dhi")]
-        public int Dhi { get; set; }
+        public double Dhi { get; set; }
 
         [JsonProperty("aqi")]
-        public int Aqi { get; set; }
+        public double Aqi { get; set; }
 
         [JsonProperty("lat")]
         public double Lat { get; set; }

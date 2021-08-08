@@ -54,4 +54,13 @@
 	<data name="Common_Empty" xml:space="preserve">
 		<value>-</value>
 	</data>
+	<data name="TownDescriptionPage_NoFavourites" xml:space="preserve">
+		<value>No favourites found</value>
+	</data>
+	<data name="WeatherByTownPage_AddFavorite" xml:space="preserve">
+		<value>Add to favourites</value>
+	</data>
+	<data name="WeatherByTownPage_TownAlreadyAdded" xml:space="preserve">
+		<value>Town already added!</value>
+	</data>
 </root>

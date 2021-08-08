@@ -128,6 +128,9 @@
     <PackageReference Include="Newtonsoft.Json">
       <Version>13.0.1</Version>
     </PackageReference>
+    <PackageReference Include="sqlite-net-pcl">
+      <Version>1.7.335</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -143,5 +146,6 @@
     <BundleResource Include="Resources\favourite.png" />
     <BundleResource Include="Resources\cloud.png" />
     <BundleResource Include="Resources\temp.png" />
+    <BundleResource Include="Resources\delete.png" />
   </ItemGroup>
 </Project>

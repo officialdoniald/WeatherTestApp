@@ -2,19 +2,17 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="WeatherTestApp.View.Weather.WeatherByTownPage"
+    x:Class="WeatherTestApp.View.Weather.TownDescriptionPage"
     xmlns:Resource="clr-namespace:WeatherTestApp.Resources.Languages" 
     xmlns:viewModelBase="clr-namespace:Xamarin.Forms.MVVM.ViewModel.Base;assembly=Xamarin.Forms.MVVM"
     viewModelBase:ViewModelLocator.AutoWireViewModel="true"
     xmlns:iOS="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
     iOS:Page.UseSafeArea="true"
-    Title="{x:Static Resource:ApplicationResource.WeatherByTownPage_Title}">
+    Title="{Binding Town.Name}">
     <ContentPage.Content>
         <StackLayout>
-            <Entry Text="{Binding Town}" Placeholder="{x:Static Resource:ApplicationResource.WeatherByTownPage_TownEntryPlaceholder}"/>
-            <Button Command="{Binding SearchCommand}" Text="{x:Static Resource:ApplicationResource.WeatherByTownPage_Search}"/>
             <ActivityIndicator/>
-            <Grid VerticalOptions="CenterAndExpand" IsVisible="{Binding IsNoTownDataFound, Converter={StaticResource InverseBoolConverter}}">
+            <Grid VerticalOptions="CenterAndExpand">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
@@ -28,8 +26,6 @@
                 <Label Grid.Column="0" Grid.Row="1" FontSize="40" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Text="{Binding SkyInfo}"/>
                 <Label Grid.Column="1" Grid.Row="1" FontSize="40" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Text="{Binding Temperature}"/>
             </Grid>
-            <Button Command="{Binding AddFavCommand}" Text="{x:Static Resource:ApplicationResource.WeatherByTownPage_AddFavorite}" IsVisible="{Binding IsNoTownDataFound, Converter={StaticResource InverseBoolConverter}}"/>
-            <Label HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Text="{x:Static Resource:ApplicationResource.WeatherByTownPage_NoTownDataFound}" IsVisible="{Binding IsNoTownDataFound}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

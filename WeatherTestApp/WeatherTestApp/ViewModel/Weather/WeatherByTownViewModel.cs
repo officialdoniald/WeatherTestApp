@@ -10,6 +10,10 @@ using WeatherTestApp.Helpers;
 using System;
 using Newtonsoft.Json;
 using WeatherTestApp.Models.DTOs;
+using WeatherTestApp.Database;
+using WeatherTestApp.Database.Entities;
+using WeatherTestApp.Models.UIs;
+using WeatherTestApp.Configurations;
 
 namespace WeatherTestApp.ViewModel.Weather
 {
@@ -71,6 +75,53 @@ namespace WeatherTestApp.ViewModel.Weather
         #endregion
 
         #region Commands
+
+        public ICommand AddFavCommand => new Command<object>(AddFav);
+
+        private async void AddFav(object obj)
+        {
+            if (string.IsNullOrEmpty(Town) || IsNoTownDataFound)
+            {
+                return;
+            }
+
+            Device.BeginInvokeOnMainThread(() =>
+            {
+                IsLoading = true;
+            });
+
+            var town = await AppConfig.Instance.LocalDatabase.GetTownByName(Town);
+
+            if (town == null)
+            {
+                var id = await AppConfig.Instance.LocalDatabase.Add(new TownEntity()
+                {
+                    Town = Town
+                });
+
+                GlobalEvents.OnTownAdded_Event(this, new TownUI()
+                {
+                    Id = id,
+                    Name = Town
+                });
+            }
+            else
+            {
+                Device.BeginInvokeOnMainThread(() =>
+                {
+                    App.Current.MainPage.DisplayAlert(
+                        ApplicationResource.Common_Warning,
+                        ApplicationResource.WeatherByTownPage_TownAlreadyAdded,
+                        ApplicationResource.Common_OK);
+                });
+            }
+
+            Device.BeginInvokeOnMainThread(() =>
+            {
+                IsLoading = false;
+            });
+        }
+
 
         public ICommand SearchCommand => new Command<object>(Search);
 

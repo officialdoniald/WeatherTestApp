@@ -15,6 +15,7 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
     <PackageReference Include="Xamarin.Forms.MVVM_officialdoniald" Version="1.0.0.3" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.7.335" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Xamarin.Forms.MVVM_officialdoniald" />
@@ -33,6 +34,10 @@
     <None Remove="Resources\Languages\" />
     <None Remove="Newtonsoft.Json" />
     <None Remove="Configurations\" />
+    <None Remove="Database\" />
+    <None Remove="SQLite" />
+    <None Remove="sqlite-net-pcl" />
+    <None Remove="Database\Entities\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModel\" />
@@ -49,6 +54,8 @@
     <Folder Include="Resources\" />
     <Folder Include="Resources\Languages\" />
     <Folder Include="Configurations\" />
+    <Folder Include="Database\" />
+    <Folder Include="Database\Entities\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="Resources\Languages\ApplicationResource.resx">

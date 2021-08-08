@@ -10,8 +10,28 @@
     iOS:Page.UseSafeArea="true"
     Title="{x:Static Resource:ApplicationResource.FavouriteTownsPage_Title}">
     <ContentPage.Content>
-        <StackLayout>
-
-        </StackLayout>
+        <ScrollView>
+            <StackLayout>
+                <ActivityIndicator/>
+                <StackLayout BindableLayout.ItemsSource="{Binding FavouriteTownList}" x:Name="favouriteTownList" IsVisible="{Binding IsFavouriteListEmpty, Converter={StaticResource InverseBoolConverter}}">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding Name}" VerticalOptions="Center"/>
+                                <Image Source="delete.png" HeightRequest="25" HorizontalOptions="EndAndExpand" VerticalOptions="Center">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding Path=BindingContext.DeleteCommand, Source={x:Reference favouriteTownList}}" CommandParameter="{Binding .}"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Path=BindingContext.TownClickedCommand, Source={x:Reference favouriteTownList}}" CommandParameter="{Binding .}"/>
+                                </StackLayout.GestureRecognizers>
+                            </StackLayout>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
+                <Label HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Text="{x:Static Resource:ApplicationResource.TownDescriptionPage_NoFavourites}" IsVisible="{Binding IsFavouriteListEmpty}"/>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
