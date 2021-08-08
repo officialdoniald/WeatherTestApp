@@ -25,8 +25,8 @@
                 </Grid.RowDefinitions>
                 <Image Source="cloud.png" Grid.Column="0" Grid.Row="0"/>
                 <Image Source="temp.png" Grid.Column="1" Grid.Row="0"/>
-                <Label Grid.Column="0" Grid.Row="1" FontSize="40" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Text="{Binding SkyInfo}"/>
-                <Label Grid.Column="1" Grid.Row="1" FontSize="40" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Text="{Binding Temperature}"/>
+                <Label Grid.Column="0" Grid.Row="1" FontSize="40" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" HorizontalTextAlignment="Center" Text="{Binding SkyInfo}"/>
+                <Label Grid.Column="1" Grid.Row="1" FontSize="40" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" HorizontalTextAlignment="Center" Text="{Binding Temperature}"/>
             </Grid>
             <Button Command="{Binding AddFavCommand}" Text="{x:Static Resource:ApplicationResource.WeatherByTownPage_AddFavorite}" IsVisible="{Binding IsNoTownDataFound, Converter={StaticResource InverseBoolConverter}}"/>
             <Label HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Text="{x:Static Resource:ApplicationResource.WeatherByTownPage_NoTownDataFound}" IsVisible="{Binding IsNoTownDataFound}"/>

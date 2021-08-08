@@ -63,6 +63,18 @@
                 <Setter Property="VerticalOptions" Value="Center"/>
                 <Setter Property="HeightRequest" Value="35"/>
             </Style>
+
+            <Style ApplyToDerivedTypes="True" TargetType="TabbedPage">
+                <Setter Property="BarTextColor" Value="White"/>
+                <Setter Property="SelectedTabColor" Value="Black"/>
+                <Setter Property="UnselectedTabColor" Value="White"/>
+                <Setter Property="BarBackgroundColor" Value="{StaticResource AppColor}"/>
+            </Style>
+
+            <Style ApplyToDerivedTypes="True" TargetType="NavigationPage">
+                <Setter Property="BarTextColor" Value="White"/>
+                <Setter Property="BarBackgroundColor" Value="{StaticResource AppColor}"/>
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
